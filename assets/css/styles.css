@@ -1,0 +1,713 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&display=swap");
+
+/*=============== 2- General Style ===============*/
+:root {
+  --dark-color: #222;
+  --white-color: #fff;
+  --main-color: rgb(125, 103, 64);
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* height: 2000vh; */
+  background: var(--white-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--white-color);
+  font-family: Arial;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(34, 34, 34, 0.5);
+}
+
+/* ************** header section ************** */
+
+.header {
+  background: var(--dark-color);
+  position: relative;
+}
+
+.header .header-content {
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header .header-content .logo h2 {
+  font-size: 2rem;
+}
+
+.header .header-content .collapse {
+  cursor: pointer;
+  display: none;
+}
+
+.header .header-content .nav {
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  transition: 700ms ease;
+  z-index: 999;
+}
+.header .header-content .nav li a {
+  position: relative;
+}
+
+.header .header-content .nav li:not(.blog) a:not(.dropdown-item):after {
+  content: "⌄";
+  position: absolute;
+  top: -12px;
+  right: -15px;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.header .header-content .nav li.active::after {
+  content: "^";
+  position: absolute;
+  top: -12px;
+  right: -15px;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.header .header-content .nav li .dropdown-menu {
+  display: none;
+  background-color: var(--dark-color);
+  position: absolute;
+  margin: 20px 0;
+  padding: 20px 10px;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.5s ease;
+  text-transform: capitalize;
+  top: 40%;
+  z-index: 999;
+}
+
+.header .header-content .nav li:hover .dropdown-menu {
+  display: flex;
+}
+
+/* *************** main section *********** */
+.main .welcome {
+  background: url(../img/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 85vh;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.main .welcome .welcome-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14% auto;
+}
+
+.main .welcome .welcome-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 50%;
+  padding: 0 50px;
+}
+
+.main .welcome .welcome-text .par {
+  padding: 0 9%;
+  letter-spacing: 3px;
+}
+
+.main .welcome .welcome-text span {
+  font-size: 13px;
+}
+
+.span {
+  opacity: 0.6;
+}
+
+.main .welcome .welcome-text h1 {
+  line-height: 1.2;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.main .welcome .welcome-text .btns {
+  display: flex;
+  gap: 20px;
+  /* justify-content: center; */
+}
+
+button {
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 1px;
+  text-transform: capitalize;
+  width: 30%;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+button.services {
+  background: var(--main-color);
+}
+
+.main .welcome .welcome-text .btns .btn:nth-of-type(2) {
+  background: transparent;
+  border: 1px solid var(--white-color);
+}
+
+button.services svg {
+  transition: 700ms ease;
+}
+
+button.services:hover svg {
+  transform: translateX(10px);
+}
+
+.main .welcome .welcome-arrows {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.main .welcome .welcome-arrows button {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  background: rgba(17, 17, 17, 0.8);
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.main .welcome .welcome-arrows button:nth-of-type(2) {
+  left: -60px;
+  top: 60px;
+}
+
+/* services section  */
+.services {
+  color: var(--dark-color);
+  margin-bottom: 50px;
+}
+.services .services-content .row {
+  width: 90%;
+  display: flex !important;
+  gap: 20px;
+  margin: 0 auto;
+  justify-content: center;
+  position: relative;
+}
+
+.services .row .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: calc(90% / 4);
+}
+.services .row .span,
+.howWeWork .span {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  align-items: center;
+  gap: 10px;
+}
+.span .line {
+  width: 20%;
+  height: 2px;
+  background: var(--dark-color);
+  opacity: 0.6;
+}
+
+.services .row .info h3 {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+}
+
+.services .row .info p {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.services .row .info h3 span {
+  color: var(--main-color);
+}
+
+.services .row .info button {
+  width: 70%;
+  color: var(--white-color);
+}
+
+.services .row .imageParent {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  top: -40px;
+  justify-content: center;
+}
+
+.services .row .imageParent .img {
+  position: relative;
+}
+
+.services .row .imageParent .span {
+  position: absolute;
+  color: #fff;
+  bottom: 10%;
+  transform: rotate(-90deg);
+}
+
+.services .row .imageParent .line {
+  width: 20px;
+  background: #fff;
+}
+.services .row .image {
+  width: calc(80% / 3);
+  background: var(--dark-color);
+}
+.services .row .image h5 {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+/* how we work section  */
+.howWeWork {
+  color: var(--dark-color);
+}
+.howWeWork-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+.howWeWork .img {
+  width: 40%;
+}
+.howWeWork .idea {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  min-height: 450px;
+  width: 40%;
+  position: relative;
+  z-index: 9;
+  left: -5%;
+  background: var(--white-color);
+  padding: 30px;
+}
+.howWeWork .span,
+.howWeWork h3 span {
+  color: var(--main-color);
+}
+.howWeWork .line {
+  background: var(--main-color);
+}
+.howWeWork h3 {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+}
+.howWeWork p {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+.howWeWork .btn-group {
+  position: relative;
+  display: flex;
+}
+.howWeWork button {
+  margin: 0 !important;
+}
+.howWeWork button.active {
+  background: var(--main-color);
+}
+.howWeWork .info {
+  display: none;
+  background: var(--main-color);
+  padding: 30px 20px;
+  color: var(--white-color);
+  position: absolute;
+  top: 46px;
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+.howWeWork .info.active {
+  display: block;
+}
+
+.howWeWork .info ul {
+  padding-top: 20px;
+}
+
+.howWeWork .info ul li::before {
+  content: "---";
+  margin-right: 10px;
+}
+
+.team {
+  background: var(--dark-color);
+  text-align: center;
+  padding: 100px;
+}
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team .span {
+  text-transform: uppercase;
+}
+
+.team h3 {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+}
+
+.team .line {
+  height: 2px;
+  width: 5%;
+  background: var(--white-color);
+  opacity: 0.6;
+  margin: 0 auto;
+}
+
+.team .row {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.team .col {
+  background: var(--white-color);
+  color: var(--dark-color);
+}
+
+.team .col .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.quote {
+  background: rgb(92, 80, 64);
+  text-align: center;
+  padding: 30px;
+}
+
+.quote a {
+  opacity: 0.8;
+}
+
+.quote svg {
+  transition: 700ms ease;
+}
+
+.quote p:hover svg {
+  transform: translateX(10px);
+}
+
+/* footer  */
+.footer .footer-top {
+  background: var(--dark-color);
+}
+
+.footer-top-content {
+  padding: 50px;
+}
+.footer-top * {
+  opacity: 0.9;
+}
+
+.footer-top .row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.footer-top .col h3 {
+  padding: 20px 0;
+  border-bottom: 1px solid #716a6a;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.footer-top .col {
+  line-height: 1.6;
+}
+
+.footer-top p {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-top .col ul {
+  cursor: pointer;
+  line-height: 2;
+}
+
+.footer-top .col ul li::before {
+  content: ">";
+  margin-right: 10px;
+  font-size: 0.7rem;
+}
+
+.footer-top .col span {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #716a6a;
+  font-size: 0.9rem;
+}
+
+.footer-top button {
+  width: 100%;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.footer-bottom {
+  background: #111;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+
+.footer-bottom-content .info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-bottom-content .info h3 {
+  font-size: 1.8rem;
+}
+
+.footer-bottom-content .info .line {
+  height: 2px;
+  width: 50px;
+  background: var(--white-color);
+}
+
+.footer-bottom-content .info p {
+  font-size: 0.9rem;
+}
+
+.footer-bottom-content .social svg {
+  font-size: 2rem;
+}
+/* For large devices */
+/* For medium devices */
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+  .header .nav {
+    font-size: 13px !important;
+    gap: 23px !important;
+  }
+  .howWeWork-content .idea {
+    left: 0;
+    border-radius: 0;
+    margin-top: -3px;
+    height: 300px !important;
+  }
+  .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .row .col {
+    width: 100%;
+  }
+}
+/* For medium and small devices */
+@media only screen and (max-width: 1199px) {
+  /* welcome section */
+  .main .welcome {
+    position: relative !important;
+    height: 80vh;
+  }
+  .main .welcome .welcome-content {
+    text-align: center;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40% !important;
+  }
+  .main .welcome .welcome-content .welcome-text {
+    width: 95% !important;
+  }
+  .welcome .welcome-text h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.7 !important;
+  }
+  .main .welcome .welcome-content .btns {
+    justify-content: center;
+  }
+  .main .welcome .welcome-content .btns button {
+    width: 50% !important;
+    height: 61px;
+  }
+  .main .welcome .welcome-arrows {
+    width: 100%;
+    justify-content: space-between !important;
+    flex-direction: row-reverse;
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+  }
+  .main .welcome .welcome-arrows button {
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+  }
+  /* services section */
+  .services .row,
+  .services .imageParent {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .services .row > div {
+    margin-top: 30px;
+  }
+
+  .services .imageParent .image {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .services .info {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  /* how we work section  */
+  .howWeWork-content {
+    flex-direction: column;
+  }
+  .howWeWork-content .img,
+  .howWeWork-content .idea {
+    width: 90%;
+  }
+  .howWeWork-content .idea .info {
+    font-size: 0.6rem;
+  }
+
+  /* footer */
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-bottom-content .info p {
+    font-size: 0.7rem;
+  }
+}
+/* For small devices */
+@media only screen and (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+  .header .nav {
+    display: none !important;
+  }
+  .header .nav.active {
+    display: flex !important;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    background: #222;
+    width: 100%;
+    padding: 20px 0;
+  }
+  .header .nav.active:hover .dropdown-menu {
+    display: none !important;
+  }
+  .header .collapse {
+    display: block !important;
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 1.6rem;
+  }
+  .howWeWork-content .idea {
+    left: 0;
+    border-radius: 0;
+    margin-top: -3px;
+    height: 600px;
+  }
+  .team .container {
+    width: 100% !important;
+  }
+  .row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+  .row .col {
+    width: 100%;
+  }
+  .quote P {
+    font-size: 0.8rem;
+  }
+}
